@@ -42,7 +42,7 @@ function startDisplay() {
                 {
                     name: "choice",
                     type: "rawlist",
-                    message: "What is the id of the product you'd like to buy? \n(Please use up and down arrows to scroll through list)",
+                    message: "What is the id of the product you'd like to buy? \n(Please use up and down arrows to scroll through list, once item selected, press 'Enter')",
                     choices: function () {
                         var choiceArray = [];
                         for (var i = 0; i < res.length; i++) {
