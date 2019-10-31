@@ -28,7 +28,7 @@ connection.connect(function (err) {
 
 //Currently displaying table of items that are currently in stock
 function startDisplay() {
-    console.log("Test");
+    //console.log("Test");
 
     connection.query("SELECT * FROM products", function (err, res) {
         if (err) throw err;
@@ -46,7 +46,10 @@ function startDisplay() {
                     choices: function () {
                         var choiceArray = [];
                         for (var i = 0; i < res.length; i++) {
-                            choiceArray.push(res[i].item_id + " - " + res[i].product_name);
+                            var id = res[i].item_id
+                            var product = res[i].product_name
+
+                            choiceArray.push(id);
                         }
                         return choiceArray;
 
@@ -60,6 +63,7 @@ function startDisplay() {
                     name: "quantity",
                     type: "input",
                     message: "How many units of the product would you like to buy?",
+                    //Might need to do a validate here to make sure user choose a number.
                     validate: function (value) {
                         if (isNaN(value) === false) {
                             return true;
@@ -70,48 +74,58 @@ function startDisplay() {
 
                 }
 
-                //Might need to do a validate here on the quantity.
+
 
                 //Checking here to see if the user quantity is more then what is currentyl in stock.    
             ])
             .then(function (answer) {
+                //console.log(answer.choice)
                 var chosenItem;
-                for (var i = 0; i < res[i].length; i++) {
+                for (var i = 0; i < res.length; i++) {
                     if (res[i].item_id === answer.choice) {
                         chosenItem = res[i];
-                        //console.log("Sorry, there is not enough in stock to complete your order, please try again");
-                        //startDisplay();
                     }
-                    //else {
-                    //startCheckout();
-                    //console.log("Please proceed to checkout");
+
                 }
-                if (chosenItem.answer.quantity > res[i].stock_quantity) {
-                    console.log("Sorry, there is not enough in stock to complete your order, please try again");
-                    startDisplay();
+
+                //console.log(chosenItem)
+
+                //console.log(answer)
+                var initialQuantity = chosenItem.stock_quantity
+                
+                if ((initialQuantity - parseInt(answer.quantity)) > 0) {
+                    connection.query(
+                        "UPDATE products SET stock_quantity = ? WHERE item_id = ?",
+                        [initialQuantity - parseInt(answer.quantity), chosenItem.item_id], function(err, res) {
+
+                            if (err) throw err;
+
+                            // res
+                            //console.log('Your order has been placed')
+                        }
+                    )
+                    //TODO: Not sure if the quantity will be updated correctly, not sure if I need to write a line of code to subtract from total in stock.
+
+                    //TODO: Should I just display total in this function, or display in startCheckout function? Might need to display the total here because of the scope
+                    console.log("Please continue to checkout");
+                    console.log("Your total is: $" + answer.quantity * chosenItem.price);
+                    startCheckout(answer.quantity, chosenItem.item_id);
+
+
+
                 }
                 else {
-                    connection.query(
-                        "UPDATE products SET ? WHERE ?",
-                        [
-                            {
-                                item_id: chosenItem,
-                            },
-                            {
-                                stock_quantity: answer.quantity,
-                            }
-
-                        ]
-                    )
-                    console.log("Please continue to checkout");
-                    startCheckout();
+                    
+                    console.log("Sorry, there is not enough in stock to complete your order, please try again");
+                    
+                    startDisplay();
 
                 }
 
-
+                
             });
 
-
+            
 
     });
 
@@ -122,17 +136,16 @@ function startDisplay() {
 
 
 function startCheckout() {
-    console.log("Test Checkout");
-    connnection.end();
+    
+    console.log("Thank you for your purchase!");
+
+    connection.end();
+
+    //TODO: Maybe prompt the user to start another purchase or exit?
+    //startDisplay();
 
     //Here I'll need to add a connection.query ("UPDATE products SET ? WHERE ?") to subtract the stock quantity and update how many units are left.
 
-    //Also, I need to have the total_amount variable to told the price of the all the items puchase, so need + operand.
-
-
-
-
-
-
+    //TODO: Also, I need to have the total_amount variable to told the price of the all the items puchase, so need + operand.
 }
 

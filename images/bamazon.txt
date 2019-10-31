@@ -1,0 +1,85 @@
+┌─────────┬─────────┬─────────────────────────────────────┬───────────────────────┬───────┬────────────────┐
+│ (index) │ item_id │            product_name             │    department_name    │ price │ stock_quantity │
+├─────────┼─────────┼─────────────────────────────────────┼───────────────────────┼───────┼────────────────┤
+│    0    │    1    │      'Taylor Acoustic Guitar'       │ 'Musical Instruments' │  899  │       4        │
+│    1    │    5    │    'Roland Micro Cube Amplifier'    │ 'Musical Instruments' │  160  │       6        │
+│    2    │   22    │ "D'Addario Acoustic Guitar Strings" │ 'Musical Instruments' │   7   │       15       │
+│    3    │   29    │      'FoodSaver Vacuum Sealer'      │       'Kitchen'       │  125  │       5        │
+│    4    │   144   │     'Shun Cutlery Chef’s Knife'     │       'Kitchen'       │  200  │       20       │
+│    5    │   214   │      'Breville Food Processor'      │       'Kitchen'       │  275  │       10       │
+│    6    │   251   │        'BELAZU Rose Harissa'        │       'Grocery'       │  10   │       2        │
+│    7    │   255   │      'HP Brown Sauce Original'      │       'Grocery'       │   6   │       21       │
+│    8    │   256   │     "Colman's English Mustard"      │       'Grocery'       │   5   │       15       │
+│    9    │   314   │  'Colavita Extra Virgin Olive Oil'  │       'Grocery'       │  15   │       25       │
+└─────────┴─────────┴─────────────────────────────────────┴───────────────────────┴───────┴────────────────┘
+? What is the id of the product you'd like to buy? 
+(Please use up and down arrows to scroll through list, once item selected, press 'Enter') 255
+? How many units of the product would you like to buy? 2
+Please continue to checkout
+Your total is: $12
+Thank you for your purchase!
+
+***************Stock Quantity for item_id 255 went down by 2******************
+┌─────────┬─────────┬─────────────────────────────────────┬───────────────────────┬───────┬────────────────┐
+│ (index) │ item_id │            product_name             │    department_name    │ price │ stock_quantity │
+├─────────┼─────────┼─────────────────────────────────────┼───────────────────────┼───────┼────────────────┤
+│    0    │    1    │      'Taylor Acoustic Guitar'       │ 'Musical Instruments' │  899  │       4        │
+│    1    │    5    │    'Roland Micro Cube Amplifier'    │ 'Musical Instruments' │  160  │       6        │
+│    2    │   22    │ "D'Addario Acoustic Guitar Strings" │ 'Musical Instruments' │   7   │       15       │
+│    3    │   29    │      'FoodSaver Vacuum Sealer'      │       'Kitchen'       │  125  │       5        │
+│    4    │   144   │     'Shun Cutlery Chef’s Knife'     │       'Kitchen'       │  200  │       20       │
+│    5    │   214   │      'Breville Food Processor'      │       'Kitchen'       │  275  │       10       │
+│    6    │   251   │        'BELAZU Rose Harissa'        │       'Grocery'       │  10   │       2        │
+│    7    │   255   │      'HP Brown Sauce Original'      │       'Grocery'       │   6   │       19       │
+│    8    │   256   │     "Colman's English Mustard"      │       'Grocery'       │   5   │       15       │
+│    9    │   314   │  'Colavita Extra Virgin Olive Oil'  │       'Grocery'       │  15   │       25       │
+└─────────┴─────────┴─────────────────────────────────────┴───────────────────────┴───────┴────────────────┘
+? What is the id of the product you'd like to buy? 
+(Please use up and down arrows to scroll through list, once item selected, press 'Enter') 314
+? How many units of the product would you like to buy? 4
+Please continue to checkout
+Your total is: $60
+Thank you for your purchase!
+************Not enough stock available for item_id 1, user redirected to startDisplay() again***********
+┌─────────┬─────────┬─────────────────────────────────────┬───────────────────────┬───────┬────────────────┐
+│ (index) │ item_id │            product_name             │    department_name    │ price │ stock_quantity │
+├─────────┼─────────┼─────────────────────────────────────┼───────────────────────┼───────┼────────────────┤
+│    0    │    1    │      'Taylor Acoustic Guitar'       │ 'Musical Instruments' │  899  │       4        │
+│    1    │    5    │    'Roland Micro Cube Amplifier'    │ 'Musical Instruments' │  160  │       6        │
+│    2    │   22    │ "D'Addario Acoustic Guitar Strings" │ 'Musical Instruments' │   7   │       15       │
+│    3    │   29    │      'FoodSaver Vacuum Sealer'      │       'Kitchen'       │  125  │       5        │
+│    4    │   144   │     'Shun Cutlery Chef’s Knife'     │       'Kitchen'       │  200  │       20       │
+│    5    │   214   │      'Breville Food Processor'      │       'Kitchen'       │  275  │       10       │
+│    6    │   251   │        'BELAZU Rose Harissa'        │       'Grocery'       │  10   │       2        │
+│    7    │   255   │      'HP Brown Sauce Original'      │       'Grocery'       │   6   │       19       │
+│    8    │   256   │     "Colman's English Mustard"      │       'Grocery'       │   5   │       15       │
+│    9    │   314   │  'Colavita Extra Virgin Olive Oil'  │       'Grocery'       │  15   │       21       │
+└─────────┴─────────┴─────────────────────────────────────┴───────────────────────┴───────┴────────────────┘
+? What is the id of the product you'd like to buy? 
+(Please use up and down arrows to scroll through list, once item selected, press 'Enter') 1
+? How many units of the product would you like to buy? 10
+Sorry, there is not enough in stock to complete your order, please try again
+
+┌─────────┬─────────┬─────────────────────────────────────┬───────────────────────┬───────┬────────────────┐
+│ (index) │ item_id │            product_name             │    department_name    │ price │ stock_quantity │
+├─────────┼─────────┼─────────────────────────────────────┼───────────────────────┼───────┼────────────────┤
+│    0    │    1    │      'Taylor Acoustic Guitar'       │ 'Musical Instruments' │  899  │       4        │
+│    1    │    5    │    'Roland Micro Cube Amplifier'    │ 'Musical Instruments' │  160  │       6        │
+│    2    │   22    │ "D'Addario Acoustic Guitar Strings" │ 'Musical Instruments' │   7   │       15       │
+│    3    │   29    │      'FoodSaver Vacuum Sealer'      │       'Kitchen'       │  125  │       5        │
+│    4    │   144   │     'Shun Cutlery Chef’s Knife'     │       'Kitchen'       │  200  │       20       │
+│    5    │   214   │      'Breville Food Processor'      │       'Kitchen'       │  275  │       10       │
+│    6    │   251   │        'BELAZU Rose Harissa'        │       'Grocery'       │  10   │       2        │
+│    7    │   255   │      'HP Brown Sauce Original'      │       'Grocery'       │   6   │       19       │
+│    8    │   256   │     "Colman's English Mustard"      │       'Grocery'       │   5   │       15       │
+│    9    │   314   │  'Colavita Extra Virgin Olive Oil'  │       'Grocery'       │  15   │       21       │
+└─────────┴─────────┴─────────────────────────────────────┴───────────────────────┴───────┴────────────────┘
+? What is the id of the product you'd like to buy? 
+(Please use up and down arrows to scroll through list, once item selected, press 'Enter') 144
+? How many units of the product would you like to buy? 4
+Please continue to checkout
+Your total is: $800
+Thank you for your purchase!
+MacBook-Pro-391:~/GitHub/bamazon$ 
+
+
